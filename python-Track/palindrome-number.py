@@ -1,13 +1,12 @@
-class Solution(object):
-    def isPalindrome(self, x):
-        """
-        :type x: int
-        :rtype: bool
-        """
-        y=str(x)
-        
-        if y == y[::-1]:
-            return True
-    
-        return False
+class Solution:
+    def isPalindrome(self, x: int) -> bool:
+        if x<0:
+            return False
+        num=[]
+        while x!=0:
+            value,rem = divmod(x,10)
+            num.append(rem)
+            x=value
+        return num== num[::-1]   
+
         
