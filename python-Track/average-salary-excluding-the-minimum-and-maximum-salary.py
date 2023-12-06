@@ -1,6 +1,6 @@
 class Solution:
     def average(self, salary: List[int]) -> float:
-        #if sorting used i.e. nlogn time complexity
+#if sorting used i.e. nlogn time complexity
         salary.sort()
         sum = 0
         for i in range (1, len(salary)-1):
@@ -9,7 +9,11 @@ class Solution:
         avg = sum/(len(salary)-2)
         return avg
 
-        #if sorting not used just find the min/max value from array i.e. n time complexity
+# if min, max, sum functions are used
+        # return float(sum(salary)-(min(salary)+max(salary)))/(len(salary)-2)
+
+#if sorting not used just find the min/max value from array i.e. n time complexity
+#this code is done without using the max, min, sum function
         # if salary[0]<salary[1]:
         #     #put max at index 0 , and min at index 1
         #     salary[0], salary[1] = salary[1], salary[0]
