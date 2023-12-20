@@ -1,20 +1,20 @@
 class ATM:
 
     def __init__(self):
-        self.notes_count=[0, 0, 0, 0 ,0]
+        self.notes_count={20:0, 50:0, 100:0, 200:0, 500:0}
         self.notes=(20, 50, 100, 200, 500)
 
 
 
     def deposit(self, banknotesCount: List[int]) -> None:
         for i in range(len(banknotesCount)):
-            self.notes_count[i]+=banknotesCount[i]
+            self.notes_count[self.notes[i]]+=banknotesCount[i]
         
 
     def withdraw(self, amount: int) -> List[int]:
         ans=[0,0,0,0,0]
         for i in range(4, -1, -1):
-            x=self.notes_count[i]
+            x=self.notes_count[self.notes[i]]
             if amount>=self.notes[i]:
                 y=amount//self.notes[i]
                 if x>y:
@@ -28,7 +28,7 @@ class ATM:
 
         if amount==0:
             for i in range(5):
-                self.notes_count[i]-=ans[i] 
+                self.notes_count[self.notes[i]]-=ans[i] 
             return ans
         else: 
             return [-1]
