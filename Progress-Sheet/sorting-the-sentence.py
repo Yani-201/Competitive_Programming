@@ -1,9 +1,8 @@
 class Solution:
     def sortSentence(self, s: str) -> str:
-       
-        ques = s.split()
-        temp = [0]*(len(ques))
-        for word in ques:
-          temp[int(word[-1])-1]=word[:-1]
-       
-        return " ".join(temp)
+        temp = s.split()
+        ans =[0]*len(temp)
+        for word in temp:
+            ans[int(word[-1])-1]=word[:-1]
+        return " ".join(ans)
+        
