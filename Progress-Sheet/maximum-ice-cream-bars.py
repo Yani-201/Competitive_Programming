@@ -1,22 +1,10 @@
 class Solution:
     def maxIceCream(self, costs: List[int], coins: int) -> int:
-        maxi=max(costs)
-        counted=[0]*maxi
+        costs.sort()
 
-        for i in range(len(costs)):
-            counted[costs[i]-1]+=1
-        ctr=0
-        for k in range(len(counted)):
-            if counted[k]!=0:
-                    n=coins//(k+1)
-                    if counted[k]<=n:
-                        coins-=((k+1)*(counted[k]))
-                        ctr+=(counted[k])
-                    else:
-                        coins-=((k+1)*n)
-                        ctr+=n
+        for idx,val in enumerate(costs):
+            coins-=val
+            if coins<0:
+                return idx
 
-            if coins==0:
-                break
-
-        return ctr
+        return idx+1
