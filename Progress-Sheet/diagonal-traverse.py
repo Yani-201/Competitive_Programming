@@ -1,5 +1,3 @@
-# from typing import List
-
 class Solution:
     def findDiagonalOrder(self, mat: List[List[int]]) -> List[int]:
         m, n = len(mat), len(mat[0])
