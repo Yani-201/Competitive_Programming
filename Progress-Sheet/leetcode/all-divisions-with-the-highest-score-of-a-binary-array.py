@@ -1,5 +1,6 @@
 class Solution:
     def maxScoreIndices(self, nums: List[int]) -> List[int]:
+        #this is updated
         for i in range(1, len(nums)):
             nums[i]+=nums[i-1]
 
