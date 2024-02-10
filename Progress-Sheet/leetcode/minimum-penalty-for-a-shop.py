@@ -14,7 +14,7 @@ class Solution:
             n_sum[i] = n_acc
         
         mini = float("inf")
-        idx = None
+        index= None
 
         for j in range(len(customers)+1):
             if j==0:
@@ -26,7 +26,7 @@ class Solution:
                 
             if mini>cur:
                 mini=cur
-                idx=j
+                index=j
                 
-        return idx
+        return index
         
