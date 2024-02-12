@@ -6,16 +6,20 @@
 
 class Solution:
     def hasCycle(self, head: Optional[ListNode]) -> bool:
-        current=head
-        visited=set()
-        visited.add(current)
 
-        while current:
-            current=current.next
-            if current in visited:
+        # o(1) space implementation ... Floyd's phase 1
+        fast=head
+        slow=head
+
+        while fast and fast.next:
+            fast=fast.next.next
+            slow=slow.next
+            if fast==slow:
                 return True
-            visited.add(current)
         return False
+
+        #o(n) space implementation but solves part1 and part2 together
+
              
 
         
