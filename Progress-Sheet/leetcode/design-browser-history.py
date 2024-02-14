@@ -18,6 +18,7 @@ class BrowserHistory:
 
     def back(self, steps: int) -> str:
         for i in range(steps):
+            # if this is the first page
             if self.current.prev == None:
                 break
             self.current = self.current.prev
@@ -25,7 +26,8 @@ class BrowserHistory:
 
     def forward(self, steps: int) -> str:
         for i in range(steps):
-            if self.current.next == None:
+            # if it is the last page
+            if self.current.next == None: 
                 break
             self.current = self.current.next
         return self.current.val
