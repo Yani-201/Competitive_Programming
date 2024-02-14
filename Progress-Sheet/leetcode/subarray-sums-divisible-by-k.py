@@ -1,6 +1,6 @@
 class Solution:
     def subarraysDivByK(self, nums: List[int], k: int) -> int:
-        acc=0
+        acc = 0
         prefix=[0]*len(nums)
         ct=0
         track=defaultdict(int)
