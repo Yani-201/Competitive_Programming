@@ -11,35 +11,23 @@ class Solution:
         current = head.next
         prev = head
 
-        if current:
-            nex = current.next
-        else:
-            return dummy.next
-
         while current:
+            if current: nex = current.next 
+            else: return dummy.next
             prev.next = nex
 
             newNode = ListNode(current.val)
             temp = dummy
             now = dummy.next
-            # print(now)
-
             while temp and now:
-                if now.val >= newNode.val:
-                    break
+                if now.val >= newNode.val: break
                 temp = now
                 now = now.next
 
             newNode.next = now
             temp.next = newNode
             
-            if newNode == prev.next:
-                prev =  prev.next
-            
+            if newNode == prev.next: prev =  prev.next
             current = nex
-            if nex:
-                nex = nex.next
-            else:
-                return dummy.next
 
         return dummy.next
