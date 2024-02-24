@@ -1,5 +1,6 @@
 class Solution:
     def predictTheWinner(self, nums: List[int]) -> bool:
+        
         def checkwin(start, end, turn):
             if start == end:
                 return nums[start]
