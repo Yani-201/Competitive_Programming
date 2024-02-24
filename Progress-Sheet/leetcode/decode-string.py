@@ -1,7 +1,6 @@
 class Solution:
     def __init__(self):
         self.i = 0
-
     def decodeString(self, s: str) -> str:
         result = ""
         while self.i < len(s) and s[self.i] != ']':
