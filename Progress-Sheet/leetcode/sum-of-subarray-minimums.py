@@ -1,5 +1,6 @@
 class Solution:
     def sumSubarrayMins(self, arr: List[int]) -> int:
+        
         # prefix iteration
         stack = []
         pref = [1]* len(arr)
