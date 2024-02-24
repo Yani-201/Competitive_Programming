@@ -10,9 +10,9 @@ class Solution:
         for j in range(len(nums)):
             before=(nums[j]*j)-prefix[j]
             after= (prefix[-1]-prefix[j])-(nums[j]*(len(nums)-j))
-        
             summ=before+after
             ans.append(summ)
+            
         return ans
 
 
