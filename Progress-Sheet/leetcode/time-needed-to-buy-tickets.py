@@ -1,5 +1,6 @@
 class Solution:
     def timeRequiredToBuy(self, tickets: List[int], k: int) -> int:
+        
         # /// without using concept of queue
         res = 0
         for i, num in enumerate(tickets):
