@@ -19,6 +19,5 @@ class Solution:
                 endScore = checkwin(start, end-1, turn)
                 return min(startScore - nums[start], endScore-nums[end])
 
-
         return checkwin(0, len(nums)-1, True) >= 0
         
