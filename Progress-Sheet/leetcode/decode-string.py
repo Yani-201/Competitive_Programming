@@ -1,6 +1,8 @@
 class Solution:
+
     def __init__(self):
         self.i = 0
+
     def decodeString(self, s: str) -> str:
         result = ""
         while self.i < len(s) and s[self.i] != ']':
@@ -17,6 +19,7 @@ class Solution:
             else:
                 result += s[self.i]
                 self.i += 1
+                
         return result
 
 
