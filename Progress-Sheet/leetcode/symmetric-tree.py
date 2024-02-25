@@ -20,7 +20,6 @@ class Solution:
 
             return left and right
 
-
         return check(root.left, root.right)
 
 
