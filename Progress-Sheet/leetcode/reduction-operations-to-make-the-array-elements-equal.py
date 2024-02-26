@@ -6,4 +6,5 @@ class Solution:
         for i in range(len(nums)-1):
             if nums[i] > nums[i+1]:
                 ops += i+1
+                
         return ops
