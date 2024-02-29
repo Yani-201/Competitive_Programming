@@ -8,7 +8,6 @@ class Solution:
             if cxr.swapcase() not in letters:
                 left = self.longestNiceSubstring(s[:idx])
                 right = self.longestNiceSubstring(s[idx+1:])
-
                 return right if len(right) > len(left) else left
 
         return s
