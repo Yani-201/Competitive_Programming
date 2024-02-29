@@ -18,6 +18,7 @@ class Solution:
                 if nums[i] > maxi:
                     maxi = nums[i]
                     mid = i
+                    
             left = helper(start, mid)
             right = helper(mid+1, end)
             return TreeNode(nums[mid], left, right)
