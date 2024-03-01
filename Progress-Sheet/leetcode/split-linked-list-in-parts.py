@@ -5,31 +5,43 @@
 #         self.next = next
 class Solution:
     def splitListToParts(self, head: Optional[ListNode], k: int) -> List[Optional[ListNode]]:
+        ans = [[] for _ in range(k)] 
+
         length = 0
-        cur = head
-        while cur:
-            cur = cur.next
+        curr = head
+        while curr:
             length += 1
-        
-        if k >= length:
-            now = 1
-            rem = 0
-        else:
-            now = length // k
-            rem = length % k
-        
+            curr = curr.next
+
+        cap = length // k
+        rem = length % k
+        idx = 0
         cur = head
-        i = 0
-        ans = []
         while cur:
-            ans.append(cur)
-            for i in range(now-1):
-                cur = cur.next
-            if rem > 0:
-                cur = cur.next
-            cur.next, cur  = None, cur.next
-            rem -= 1
+            if len(ans[idx]) < cap:
+                ans[idx].append(cur.val)
+            elif len(ans[idx]) == cap:
+                if rem > 0:
+                    ans[idx].append(cur.val)
+                    rem -= 1
+                    idx += 1
+                else:
+                    idx+=1
+                    ans[idx].append(cur.val)
+            else:
+                idx += 1
+            cur = cur.next
+
+        splitted = []
+        for nodes in ans:
+            dummy = ListNode()
+            current = dummy
+            for val in nodes:
+                temp = ListNode(val)
+                current.next = temp
+                current = current.next
+            splitted.append(dummy.next)
+        # print(ans)
+
+        return splitted
         
-        for l in range(k-len(ans)):
-            ans.append(None)
-        return ans
