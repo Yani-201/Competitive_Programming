@@ -1,12 +1,13 @@
 class Solution:
     def isValid(self, s: str) -> bool:
         stack=[]
+        tracker = {')': '(', ']': '[', '}': '{'}
 
-        for i in s:
-            if i == "(" or i =="{" or i=="[":
-                stack.append(i)
+        for i in range(len(s)):
+            if s[i] not in tracker:
+                stack.append(s[i])
             else:
-                if len(stack)!= 0 and ((i == ")" and stack[-1] == "(") or (i == "}" and stack[-1] == "{") or (i == "]" and stack[-1] == "[")):
+                if len(stack)!= 0 and (stack[-1] == tracker[s[i]]):
                     stack.pop()
                 else: 
                     return False
